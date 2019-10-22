@@ -1,14 +1,5 @@
 "use strict";
 
-$('.card').each(function(e) {
-    if ($(this).hasClass('card_size_s')) {
-        $(this).css({'border-radius': '22px'})
-    } else {
-        $(this).css({'border-radius': '54px'})
-    }
-});
-
-
 document.addEventListener("DOMContentLoaded", function () {
     $('.card').each(function(e) {
         if ($(this).hasClass('card_size_s')) {
@@ -32,24 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 '</div>'
 
 });
-
-const selectButtonText = document.querySelector('.filter__select-button .button__text');
-const selectOptions = document.querySelectorAll('.filter__select-item');
-const popup = document.querySelector('.filter__select-popup');
-
-
-selectOptions.forEach(o => {
-    o.addEventListener('click', function(e) {
-        document.querySelector('#' + e.target.dataset.group).checked = true;
-
-        selectOptions.forEach(opt => opt.classList.toggle('filter__select-item_checked', false));
-        e.target.classList.toggle('filter__select-item_checked', true);
-        popup.classList.toggle('filter__select-popup_open', false);
-        selectButtonText.innerText = e.target.innerText;
-    })
-});
-
-
 
 var initCriticalCam = function () {
     var u, m, p, v, h, y = new Array, g = document.querySelector(".critical-cam"), f = 0, S = 100, q = 100;
